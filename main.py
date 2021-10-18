@@ -10,11 +10,8 @@ from sklearn.metrics import classification_report, confusion_matrix
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 names = ["sepal length", "sepal width","petal length", "petal width", "class"]
 dataset = pd.read_csv(url, names=names)
-# print(dataset.head())
 X = dataset.iloc[:, :-1].values
-# print(X.head())
 y = dataset["class"].values
-# print(y.head())
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 scaler = StandardScaler()
 scaler.fit(X_train)
